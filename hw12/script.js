@@ -12,10 +12,8 @@ const randomArr = new Array();
 for (let i = 0; i < 100; i++) {
   randomArr.push(Math.floor(Math.random() * 101));
 }
-
 const prettyArray = (arr) => {
-  const newArr = [...arr]; //копіюємо  масив щоб не мутувати вхідні данні
-  return newArr
+  return arr
     .filter((el) => el > 50) //спочатку фільтруємо масив щоб залишились елементи більше 50, та була менша кількість елементів для сортування
     .sort(function (a, b) {
       return a - b;
@@ -62,27 +60,26 @@ const word = [
   "adjective.",
 ];
 
-//наповнюємо масив випадковими числами та строками, поки в ньому не буде 100 елементів
+//наповнюємо масив випадковими строками, поки в ньому не буде 100 елементів
 for (let i = 0; i < 100; i++) {
-  if (!Math.round(Math.random())) {
-    randomArr2.push(word[Math.round(Math.random() * 19)].toUpperCase());
-  } else {
-    randomArr2.push(Math.round(Math.random() * 100));
-  }
+    randomArr2.push(word[Math.round(Math.random() * 19)]);
 }
 
 function objArray(arr) {
-  const result = []; //створюємо масив який буде наповнюватись об'єктами
-  const newSortArr = [...arr]; //копіюємо  масив щоб не мутувати вхідні данні
-  newSortArr.sort().sort(function (a, b) {
-    return a - b;
-  }); //сортуємо масив елементів
-  newSortArr.forEach((el, i) => {
+  return arr
+  .map(el => {
     let obj = {}; //створюємо об'єкт в середені циклу
     obj.value = el; //додаємо в об'єект статичний ключ зі значенням кожного елементу по черзі
-    result.push(obj); //додаємо новий ою'єкт в масив
+    return obj; //додаємо новий ою'єкт в масив
+  })
+  .sort(function (a, b) {
+    if (a.value > b.value) {
+      return 1;
+    }
+    if (a.value < b.value) {
+      return -1;
+    }
   });
-  return result;
 }
 
 console.log(objArray(randomArr2)); //перевіряємо
