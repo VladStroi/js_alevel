@@ -4,10 +4,10 @@ fetch('https://jsonplaceholder.typicode.com/users')
 })
 .then((data) => {
     const arr = []
-    data.forEach((element, i) => {
+    data.map(element => {
       let obj = {}
-      obj.firstName = data[i].name.split(' ')[0]
-      obj.lastName = data[i].name.split(' ')[1];
+      obj.firstName = element.name.split(' ')[0];
+      obj.lastName = element.name.split(' ')[1];
       arr.push(obj)
     });
     return arr
