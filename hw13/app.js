@@ -4,14 +4,14 @@ fetch('https://jsonplaceholder.typicode.com/users')
 })
 .then((data) => {
     const arr = []
-    data.map(element => {
+    data.forEach((element, i) => {
       let obj = {}
-      obj.firstName = element.name.split(' ')[0];
-      obj.lastName = element.name.split(' ')[1];
+      obj.firstName = data[i].name.split(' ')[0]
+      obj.lastName = data[i].name.split(' ')[1];
       arr.push(obj)
     });
-    return arr
-})
-.then((array) => {
-  console.log(array);
-})
+    return arr;
+  })
+  .then((array) => {
+    console.log(array);
+  });
