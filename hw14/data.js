@@ -5,8 +5,9 @@ function isBeginOfMonth(date) {
 
   //RETURN THE LAST DAY OF THE MONTH
 function lastDayOfMonth(date) {
-    date.setMonth(date.getMonth() + 1 , 0)
-    return date.getDate()
+  const lastDay = new Date(date)
+  lastDay.setMonth(lastDay.getMonth() + 1 , 0)
+    return lastDay.getDate()
   };
   
   module.exports = {

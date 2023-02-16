@@ -7,5 +7,5 @@ test('if first day of month > (is true), if not > (is false', () => {
     expect(testExemp.isBeginOfMonth(new Date(2022, 1, 1))).toBe(true)  //перевірка умови задачі
 });
 test('return the last day of the month', () => {
-    expect(testExemp.lastDayOfMonth(new Date(2022, 1, 24))).toBe(28)
+    expect(testExemp.lastDayOfMonth(new Date(2022, 1, 24))).toBe(28) //перевірка на вивод останнього дня місяця
 })
