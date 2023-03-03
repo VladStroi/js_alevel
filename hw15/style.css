@@ -1,0 +1,39 @@
+.game {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    width: 350px;
+}
+
+.place {
+    border: 2px solid black;
+    border-radius: 3px;
+    margin: 1px;
+    line-height: 100px;
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    font-size: 25px;
+}
+
+.message {
+    text-align: center;
+}
+
+.restart{
+    margin: auto;
+    display: flex;
+}
+
+.stat {
+    display: block;
+    width: 100px;
+    height: 100px;
+    border: 2px solid rgb(65, 65, 65);
+    border-radius: 3px;
+    padding: 0 10px 10px 10px; 
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    text-align: center;
+}
